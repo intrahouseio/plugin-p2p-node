@@ -1,0 +1,47 @@
+{
+  "id": "p2p",
+  "description": "P2P plugin",
+  "gendevices": 0,
+  "service": "info",
+  "single": 1,
+  "module": "index.js",
+  "params": [
+    {
+      "name": "token",
+      "note": "$Token",
+      "type": "string",
+      "val": ""
+    },
+    {
+      "name": "proxy",
+      "note": "$Proxy",
+      "type": "droplist",
+      "data": [
+        {
+          "id": "disabled",
+          "name": "$Disabled"
+        },
+        {
+          "id": "manual",
+          "name": "$Manual"
+        },
+        {
+          "id": "auto",
+          "name": "$Auto"
+        }
+      ],
+      "val": "disabled"
+    },
+    {
+      "name": "HTTPProxy",
+      "note": "$HTTPProxy",
+      "type": "string",
+      "visible": "data.proxy === 'manual'",
+      "val": "127.0.0.1:8123"
+    }
+  ],
+  "genrules": {},
+  "commands": [
+    {"id":"send_all","name":"Send all","reload":true,"noclose":false}
+  ]
+}
