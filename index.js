@@ -1,6 +1,8 @@
 const Plugin = require('./lib/plugin');
+const P2P = require('./lib/p2p');
 
 const plugin = new Plugin();
+const p2p = new P2P();
 
 
 plugin.on('params', params => {
@@ -13,9 +15,17 @@ plugin.on('channels', channels => {
 
 plugin.on('debug', mode => {});
 
+function debug(msg) {
+  plugin.debug(msg);
+}
+
 
 function start(options) {
   plugin.debug("version: 0.0.5");
   plugin.debug("start");
-  test()
+
+  p2p.on('debug', debug);
+  p2p.setToken(options.token);
+
+  p2p.start();
 }
