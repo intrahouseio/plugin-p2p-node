@@ -7,11 +7,19 @@ const params = {
   token: '1888de8d-4c6f-4711-aca9-5b421c210431',
 }
 
+const system = {
+  port: 8088,
+}
+
 const config = [];
 
 const ps = child.fork(modulepath, [unitid]);
 
 ps.on('message', data => {
+  if (data.type === 'get' && data.tablename === `system/${unitid}`) {
+    ps.send({ type: 'get', system });
+  }
+
   if (data.type === 'get' && data.tablename === `params/${unitid}`) {
     ps.send({ type: 'get', params });
   }
