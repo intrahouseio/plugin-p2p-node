@@ -4,7 +4,7 @@ const modulepath = './index.js';
 const unitid = 'p2p'
 
 const params = {
-  token: '1888de8d-4c6f-4711-aca9-5b421c210431',
+  token: '61a12dc9-2760-4441-8b56-108a50ba013e',
 }
 
 const system = {
