@@ -4,9 +4,5 @@
     "activation": false,
     "resources": false,
     "cross": true,
-<<<<<<< HEAD
     "version":"4.0.1"
-=======
-    "version":"4.0.0"
->>>>>>> 9f3066be23c21685655a6f95aa9f1aeac1f38ebe
 }
